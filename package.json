@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "main": "dis/index.js",
   "license": "MIT",
+  "author": {
+    "name": "Olavo Amorim Santos",
+    "email": "olavo.a.santos@gmail.com"
+  },
+  "homepage": "https://github.com/olavoasantos/validate.it",
   "scripts": {
     "build": "webpack --mode production"
   },
