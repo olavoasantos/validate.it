@@ -1,5 +1,5 @@
 {
-  "name": "validate.it",
+  "name": "@validate.it/core",
   "version": "0.0.0",
   "main": "dis/index.js",
   "license": "MIT",
