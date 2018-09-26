@@ -1,6 +1,6 @@
 import between from './between';
-import MockFile from '../tests/MockFile';
-import makeArray from '../tests/makeArray';
+import MockFile from '../__helpers__/MockFile';
+import makeArray from '../__helpers__/makeArray';
 
 describe('between numeric rule', () => {
   const options = {
