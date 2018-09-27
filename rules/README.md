@@ -43,6 +43,9 @@ This functions will validate the value. It should return a `Boolean` (`true` if 
 - [digitsBetween](/rules/digitsBetween/README.md)
 - [distinct](/rules/distinct/README.md)
 - [email](/rules/email/README.md)
+
+#### Rules TODO
+
 - [greatherThan](/rules/greatherThan/README.md)
 - [greatherThanOrEqual](/rules/greatherThanOrEqual/README.md)
 - [image](/rules/image/README.md)
