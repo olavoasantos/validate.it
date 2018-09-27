@@ -6,8 +6,8 @@ The field under validation must have a matching field of `foo_confirmation`. For
 ## Implementation
 
 ```js
-({ value, name, data }) => {
-  return data[`${name}_confirmation`] === value;
+({ value, attribute, data }) => {
+  return data[`${attribute}_confirmation`] === value;
 }
 ```
 

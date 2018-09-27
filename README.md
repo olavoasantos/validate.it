@@ -4,7 +4,7 @@
 
 Still a work in progress. Soon the first version will be released. Also, this was largely based on Laravel's validation rules.
 
-## Rules
+## [Rules](/rules/README.md)
 
 - [accepted](/rules/accepted/README.md)
 
