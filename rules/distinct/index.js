@@ -1,6 +1,6 @@
 export default {
   message: attribute => `The ${attribute} field has a duplicate value.`,
-  check: (value, { key } = {}) => {
+  check: ({ value }, key) => {
     return value.reduce((isDistinct, item) => {
       if (!isDistinct) return isDistinct;
 

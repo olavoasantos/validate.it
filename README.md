@@ -46,8 +46,6 @@ Still a work in progress. Soon the first version will be released. Also, this wa
 
 - [email](/rules/email/README.md)
 
-- [filled](/rules/filled/README.md)
-
 ## Rules TODO
 
 - [greatherThan](/rules/greatherThan/README.md)

@@ -8,7 +8,7 @@ describe('distinct rule', () => {
       { id: 2, name: 'JANE DOE' },
     ];
 
-    expect(distinct.check(data, { key: 'id' })).toBeTruthy();
+    expect(distinct.check({ value: data }, 'id')).toBeTruthy();
   });
 
   /** @test */
@@ -19,7 +19,7 @@ describe('distinct rule', () => {
       { id: 3, name: 'JOHN DOE' }
     ];
 
-    expect(distinct.check(data, { key: 'name' })).toBeFalsy();
+    expect(distinct.check({ value: data }, 'name')).toBeFalsy();
   });
 
   /** @test */
@@ -28,7 +28,7 @@ describe('distinct rule', () => {
       'VALUE',
       'DIFFERENT VALUE',
     ];
-    expect(distinct.check(data)).toBeTruthy();
+    expect(distinct.check({ value: data })).toBeTruthy();
   });
 
   /** @test */
@@ -38,6 +38,6 @@ describe('distinct rule', () => {
       'DUPLICATE VALUE',
       'DUPLICATE VALUE',
     ];
-    expect(distinct.check(data)).toBeFalsy();
+    expect(distinct.check({ value: data })).toBeFalsy();
   });
 });

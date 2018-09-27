@@ -1,23 +1,21 @@
 # different:field
 
-The field under validation must have a different value than field.
+The field under validation must have a different value than another specified field.
 
+## Options
+
+- `field`: String containing the name of another field.
 
 ## Implementation
 
 ```js
-export default {
-  message: (attribute, { other }) =>
-    `The ${attribute} and ${other} must be different.`,
-  check: (value, { other }) => {
-    return JSON.stringify(value) !== JSON.stringify(other);
-  }
+({ value, data }, other) => {
+  return JSON.stringify(value) !== JSON.stringify(data[other]);
 };
-
 ```
 
 ## Default message
 
 ```
-
+The :attribute and :other must be different.
 ```

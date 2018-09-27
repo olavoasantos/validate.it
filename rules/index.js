@@ -18,7 +18,6 @@ import digits from './digits';
 import digitsBetween from './digitsBetween';
 import distinct from './distinct';
 import email from './email';
-import filled from './filled';
 import greaterThan from './greaterThan';
 import greaterThanOrEqual from './greaterThanOrEqual';
 import image from './image';
@@ -74,7 +73,6 @@ export default {
   digitsBetween,
   distinct,
   email,
-  filled,
   greaterThan,
   greaterThanOrEqual,
   image,

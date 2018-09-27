@@ -6,17 +6,13 @@ The field under validation must have a matching field of `foo_confirmation`. For
 ## Implementation
 
 ```js
-export default {
-  message: attribute => `The ${attribute} confirmation does not match.`,
-  check: (value, { name, data }) => {
-    return data[`${name}_confirmation`] === value;
-  }
-};
-
+({ value, name, data }) => {
+  return data[`${name}_confirmation`] === value;
+}
 ```
 
 ## Default message
 
 ```
-
+The :attribute confirmation does not match.
 ```

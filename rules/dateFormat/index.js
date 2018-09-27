@@ -1,9 +1,8 @@
 export default {
   message: (attribute, { format }) =>
     `The ${attribute} does not match the format ${format}.`,
-  check: (value, { format }) => {
+  check: ({ value }, format) => {
     const pattern = format
-      .replace('/', '/')
       .replace('mm', '([0-5][0-9])')
       .replace('MM', '(0[1-9]|1[0-2])')
       .replace('HH', '([0-1][0-9]|2[0-3])')

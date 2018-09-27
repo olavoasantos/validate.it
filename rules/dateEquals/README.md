@@ -2,30 +2,20 @@
 
 The field under validation must be equal to the given date. The dates will be passed into the JS Date function.
 
+## Options
+
+- `date`: should be a valid JS Date string
 
 ## Implementation
 
 ```js
-export default {
-  message: (attribute, { format }) =>
-    `The ${attribute} does not match the format ${format}.`,
-  check: (value, { format }) => {
-    const pattern = format
-      .replace('/', '/')
-      .replace('mm', '([0-5][0-9])')
-      .replace('MM', '(0[1-9]|1[0-2])')
-      .replace('HH', '([0-1][0-9]|2[0-3])')
-      .replace('DD', '(0[1-9]|1[0-9]|2[0-9]|3[0-1])')
-      .replace('YYYY', '(20[0-9][0-9]|1[8-9][0-9][0-9])');
-
-    return new RegExp(`^${pattern}$`).test(value);
-  }
+({ value }, date) => {
+  return new Date(value).getTime() === new Date(date).getTime();
 };
-
 ```
 
 ## Default message
 
 ```
-
+The :attribute does not match :date.
 ```
