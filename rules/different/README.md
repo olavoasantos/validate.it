@@ -19,3 +19,10 @@ The field under validation must have a different value than another specified fi
 ```
 The :attribute and :other must be different.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

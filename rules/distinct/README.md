@@ -27,3 +27,10 @@ When working with arrays, the field under validation must not have any duplicate
 ```
 The :attribute field has a duplicate value.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

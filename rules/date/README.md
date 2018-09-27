@@ -19,3 +19,10 @@ The field under validation must be a valid date according to the Date.parse JS f
 ```
 The :attribute is not a valid date.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

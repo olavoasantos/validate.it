@@ -32,3 +32,10 @@ The field under validation must match the given format. You should use either da
 ```
 The :attribute does not match the format :format.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

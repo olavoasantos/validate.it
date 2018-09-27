@@ -17,3 +17,10 @@ The field under validation must be formatted as an e-mail address.
 ```
 The :attribute must be a valid email address.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

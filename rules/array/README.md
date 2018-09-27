@@ -15,3 +15,10 @@ The field under validation must be a JS array.
 ```
 The :attribute must be an array.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

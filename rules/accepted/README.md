@@ -17,3 +17,10 @@ The field under validation must be `'yes'`, `'on'`, `1`, or `true`. This is usef
 ```
 The :attribute must be accepted.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

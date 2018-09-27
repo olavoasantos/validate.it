@@ -16,3 +16,10 @@ The field under validation must have a matching field of `foo_confirmation`. For
 ```
 The :attribute confirmation does not match.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

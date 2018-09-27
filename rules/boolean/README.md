@@ -21,3 +21,10 @@ The field under validation must be able to be cast as a boolean. Accepted input 
 ```
 The :attribute field must be true or false.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

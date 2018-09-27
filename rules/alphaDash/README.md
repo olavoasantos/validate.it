@@ -15,3 +15,10 @@ The field under validation may have alpha-numeric characters, as well as dashes 
 ```
 The :attribute may only contain letters, numbers, whitespaces, dashes and underscores.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

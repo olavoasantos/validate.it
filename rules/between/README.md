@@ -36,3 +36,10 @@ The :attribute must be between :min and :max characters.
 // If type is array:
 The :attribute must have between :min and :max items.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

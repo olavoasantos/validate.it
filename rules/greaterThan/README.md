@@ -22,3 +22,10 @@ export default {
 ```
 
 ```
+
+## Progress
+
+- [ ] Tests
+- [x] Response message
+- [ ] Validation logic
+- [ ] Documentation

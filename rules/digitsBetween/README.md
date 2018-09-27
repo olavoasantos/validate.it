@@ -24,3 +24,10 @@ The field under validation must have a length between the given min and max.
 ```
 The :attribute must be between :min and :max digits.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

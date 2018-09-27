@@ -15,3 +15,10 @@ The field under validation must be entirely alphabetic characters and whitespace
 ```
 The :attribute may only contain letters or spaces.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

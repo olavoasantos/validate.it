@@ -19,3 +19,10 @@ The field under validation must be numeric and must have an exact length of valu
 ```
 The :attribute must be :digits digits.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

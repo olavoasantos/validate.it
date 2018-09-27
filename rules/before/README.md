@@ -19,3 +19,10 @@ The field under validation must be a value preceding the given date. The dates w
 ```
 The :attribute must be a date before :date.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation

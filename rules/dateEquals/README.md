@@ -19,3 +19,10 @@ The field under validation must be equal to the given date. The dates will be pa
 ```
 The :attribute does not match :date.
 ```
+
+## Progress
+
+- [x] Tests
+- [x] Response message
+- [x] Validation logic
+- [x] Documentation
