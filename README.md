@@ -6,7 +6,7 @@ Still a work in progress. Soon the first version will be released. Also, this wa
 
 ## TOC
 
-1. [Available rules](/rules/)
+1. [Available rules](./rules/)
 
 ## Version log
 
