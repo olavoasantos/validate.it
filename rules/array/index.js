@@ -1,6 +1,6 @@
 export default {
   message: attribute => `The ${attribute} must be an array.`,
-  check: value => {
+  check: ({ value }) => {
     return Array.isArray(value);
   }
 };
