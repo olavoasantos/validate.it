@@ -1,0 +1,3 @@
+# mimeTypes:foo,bar,...
+
+The file under validation must have a MIME type corresponding to one of the listed extensions.

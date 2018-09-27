@@ -11,6 +11,7 @@ import between from './between';
 import boolean from './boolean';
 import confirmed from './confirmed';
 import date from './date';
+import dateEquals from './dateEquals';
 import dateFormat from './dateFormat';
 import different from './different';
 import digits from './digits';
@@ -36,6 +37,7 @@ import mimes from './mimes';
 import min from './min';
 import notIn from './notIn';
 import notRegex from './notRegex';
+import nullable from './nullable';
 import numeric from './numeric';
 import present from './present';
 import regex from './regex';
@@ -49,9 +51,6 @@ import requiredWithoutAll from './requiredWithoutAll';
 import same from './same';
 import size from './size';
 import string from './string';
-import timezone from './timezone';
-import unique from './unique';
-import uploaded from './uploaded';
 import url from './url';
 
 export default {
@@ -68,6 +67,7 @@ export default {
   boolean,
   confirmed,
   date,
+  dateEquals,
   dateFormat,
   different,
   digits,
@@ -93,6 +93,7 @@ export default {
   min,
   notIn,
   notRegex,
+  nullable,
   numeric,
   present,
   regex,
@@ -106,8 +107,5 @@ export default {
   same,
   size,
   string,
-  timezone,
-  unique,
-  uploaded,
   url
 };

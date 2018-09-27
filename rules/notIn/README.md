@@ -1,0 +1,3 @@
+# notIn:foo,bar,...
+
+The field under validation must not be included in the given list of values. The Rule::notIn method may be used to fluently construct the rule:

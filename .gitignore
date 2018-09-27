@@ -80,3 +80,5 @@ typings/
 
 out
 yarn.lock
+
+devRoutine.js

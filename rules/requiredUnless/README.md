@@ -1,0 +1,3 @@
+# requiredUnless:anotherfield,value,...
+
+The field under validation must be present and not empty unless the anotherfield field is equal to any value.

@@ -1,0 +1,3 @@
+# mimes:text/plain,...
+
+The file under validation must match one of the given MIME types

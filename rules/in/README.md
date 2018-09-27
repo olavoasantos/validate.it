@@ -1,0 +1,3 @@
+# in:foo,bar,...
+
+The field under validation must be included in the given list of values. Since this rule often requires you to implode an array, the Rule::in method may be used to fluently construct the rule.
