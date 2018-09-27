@@ -4,24 +4,31 @@ Validation rules are objects containing a `message` and a `check` functions.
 
 ## Rule structure
 
+```ts
+{
+  message: Function (attribute: string, options: Object),
+  check: Function (options: Object, ...args: any)
+}
+```
+
 ### `message`
 
 The message function defines the error message. It should return a `String` and it receives the following parameters:
 
-- `attribute`: The name of the validated field
-- `options`: A object containing the rules options
+- `attribute <String>`: The name of the validated field
+- `options <Object>`: A object containing the rules options
 
 ### `check`
 
 This functions will validate the value. It should return a `Boolean` (`true` if passes, `false` if fails) and receives the following parameters:
 
-- `options`: Object containing the valaidation data:
+- `options <Object>`: Object containing the valaidation data:
 
-  - `attribute`: name of the field being validated
-  - `value`: value of the field being validated
-  - `data`: object containing all the fields being validated
+  - `attribute <String>`: name of the field being validated
+  - `value <Any>`: value of the field being validated
+  - `data <Object>`: object containing all the fields being validated
 
-- `...args`: the rest of the arguments are the validation rules options passed in order
+- `...args <Any>`: the rest of the arguments are the validation rules options passed in order
 
 ## Available rules
 
