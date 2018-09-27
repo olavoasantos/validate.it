@@ -2,14 +2,16 @@
 
 Validation rules are objects containing a `message` and a `check` functions.
 
-## `message`
+## Rule structure
+
+### `message`
 
 The message function defines the error message. It should return a `String` and it receives the following parameters:
 
 - `attribute`: The name of the validated field
 - `options`: A object containing the rules options
 
-## `check`
+### `check`
 
 This functions will validate the value. It should return a `Boolean` (`true` if passes, `false` if fails) and receives the following parameters:
 
