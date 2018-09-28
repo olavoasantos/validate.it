@@ -1,5 +1,8 @@
 # @validate.it/rules
 
+![version](	https://img.shields.io/npm/v/@validate.it/rules.svg)
+![issues](https://img.shields.io/github/issues/olavoasantos/validate.it/@rules.svg)
+![issues](https://img.shields.io/github/issues-pr/olavoasantos/validate.it/@rules.svg)
 ![completed rules](https://img.shields.io/badge/finished%20rules-40%25-blue.svg)
 
 ## Installation
