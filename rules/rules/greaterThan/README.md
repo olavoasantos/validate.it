@@ -2,16 +2,26 @@
 
 The field under validation must be greater than the given field. The two fields must be of the same type. Strings, numerics, arrays, and files are evaluated using the same conventions as the size rule.
 
+## Options
+
+- `field`: Name of the field of comparison
+
 ## Implementation
 
 ```js
-({ value }, type, min) => {
-  return {
-    numeric: () => value > min,
-    file: () => value.size > min,
-    string: () => value.length > min,
-    array: () => value.length > min
-  }[type]();
+({ value, data }, field) => {
+  if (Array.isArray(value) || typeof value === 'string') {
+    return value.length > data[field];
+  }
+  if (!isNaN(value)) {
+    return value > data[field];
+  }
+  if (
+    typeof value === 'File' ||
+    (value.constructor && value.constructor.name === 'Blob')
+  ) {
+    return value.size > data[field];
+  }
 };
 ```
 
@@ -41,9 +51,16 @@ import { greaterThan } from '@validate.it/rules';
  */
 const data = {
   projects: 2,
+  minProjects: 1,
+
   password: 'MY_SECRET',
+  minPasswordLength: 8,
+
   file: File, // size=1024
-  overduedTasks: ['Create tests', 'Document functions']
+  minFileSize: 500,
+
+  tasks: ['Create tests', 'Document functions']
+  minTasks: 1,
 };
 
 /**
@@ -51,28 +68,28 @@ const data = {
  * Validate if the projects field is greater than 1
  * @response true
  */
-greaterThan.check({ value: data.projects }, 'numeric', 1);
+greaterThan.check({ value: data.projects, data }, 'minProjects');
 
 /**
  * File type
  * Validate if the file size in the file field is greater than 500
  * @response true
  */
-greaterThan.check({ value: data.file }, 'file', 500);
+greaterThan.check({ value: data.file, data }, 'minFileSize');
 
 /**
  * String type
  * Validate if the password length is greater than 8
  * @response true
  */
-greaterThan.check({ value: data.password }, 'string', 8);
+greaterThan.check({ value: data.password, data }, 'minPasswordLength');
 
 /**
  * Array type
- * Validate if the overduedTasks list length is greater than 0
+ * Validate if the overduedTasks list length is greater than 1
  * @response true
  */
-greaterThan.check({ value: data.overduedTasks }, 'array', 0);
+greaterThan.check({ value: data.tasks, data }, 'minTasks');
 ```
 
 ## Progress
