@@ -1,4 +1,4 @@
-# Rules
+# @validate.it/rules
 
 Validation rules are objects containing a `message` and a `check` functions.
 
