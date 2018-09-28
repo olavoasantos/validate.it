@@ -7,7 +7,7 @@
     "name": "Olavo Amorim Santos",
     "email": "olavo.a.santos@gmail.com"
   },
-  "homepage": "https://github.com/olavoasantos/validate.it",
+  "homepage": "https://github.com/olavoasantos/validate.it/tree/master/rules",
   "scripts": {
     "build": "webpack --mode production",
     "test": "jest"
