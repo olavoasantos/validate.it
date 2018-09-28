@@ -1,5 +1,7 @@
 # @validate.it/rules
 
+![completed rules](https://img.shields.io/badge/finished%20rules-40%25-blue.svg)
+
 ## Installation
 
 ```bash
