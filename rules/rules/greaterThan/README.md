@@ -13,9 +13,11 @@ The field under validation must be greater than the given field. The two fields 
   if (Array.isArray(value) || typeof value === 'string') {
     return value.length > data[field];
   }
+
   if (!isNaN(value)) {
     return value > data[field];
   }
+
   if (
     typeof value === 'File' ||
     (value.constructor && value.constructor.name === 'Blob')

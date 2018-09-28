@@ -18,7 +18,7 @@ The field under validation must have a size between the given min and max. Strin
     string: () => value.length > min && value.length < max,
     array: () => value.length > min && value.length < max
   }[type]();
-}
+};
 ```
 
 ## Default message
@@ -49,10 +49,7 @@ const data = {
   projects: 2,
   password: 'MY_SECRET',
   file: File, // size=1024
-  overduedTasks: [
-    'Create tests',
-    'Document functions',
-  ],
+  overduedTasks: ['Create tests', 'Document functions']
 };
 
 /**
