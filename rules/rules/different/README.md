@@ -20,6 +20,26 @@ The field under validation must have a different value than another specified fi
 The :attribute and :other must be different.
 ```
 
+## Example
+
+```js
+import { different } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  user: 'John Doe',
+  target: 'Jane Doe'
+};
+
+/**
+ * Validate if the user field is different from target field
+ * @response true
+ */
+different.check({ value: data.user }, 'target');
+```
+
 ## Progress
 
 - [x] Tests

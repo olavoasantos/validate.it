@@ -18,6 +18,25 @@ The field under validation must be formatted as an e-mail address.
 The :attribute must be a valid email address.
 ```
 
+## Example
+
+```js
+import { email } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  email: 'john@example.com'
+};
+
+/**
+ * Validate if the email field is a valid e-mail
+ * @response true
+ */
+email.check({ value: data.email });
+```
+
 ## Progress
 
 - [x] Tests

@@ -8,11 +8,6 @@ describe('alphaDash rule', () => {
   });
 
   /** @test */
-  it('should return true when a string is composed by characters and spaces', () => {
-    expect(alphaDash.check({ value: 'abc EFG' })).toBeTruthy();
-  });
-
-  /** @test */
   it('should return true when a string is composed by alpha and dash characters', () => {
     expect(alphaDash.check({ value: 'abc-EFG' })).toBeTruthy();
   });
@@ -27,7 +22,11 @@ describe('alphaDash rule', () => {
     expect(alphaDash.check({ value: '123' })).toBeTruthy();
     expect(alphaDash.check({ value: 'abc-123' })).toBeTruthy();
     expect(alphaDash.check({ value: 'abc_123' })).toBeTruthy();
-    expect(alphaDash.check({ value: 'abc 123' })).toBeTruthy();
+  });
+
+  /** @test */
+  it('should return false when a string is composed by characters and spaces', () => {
+    expect(alphaDash.check({ value: 'abc EFG' })).toBeFalsy();
   });
 
   /** @test */

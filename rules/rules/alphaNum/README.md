@@ -6,7 +6,7 @@ The field under validation must be entirely alpha-numeric characters.
 
 ```js
 ({ value }) => {
-  return /^([a-zA-Z0-9\s])+$/.test(value);
+  return /^([a-zA-Z0-9])+$/.test(value);
 };
 ```
 
@@ -14,6 +14,25 @@ The field under validation must be entirely alpha-numeric characters.
 
 ```
 The :attribute may only contain letters and numbers.
+```
+
+## Example
+
+```js
+import { alphaNum } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  slug: 'JohnDoe123',
+};
+
+/**
+ * Validate if slug field has only alphanumeric characters
+ * @response true
+ */
+alphaNum.check({ value: data.slug });
 ```
 
 ## Progress

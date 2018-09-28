@@ -33,6 +33,30 @@ The field under validation must match the given format. You should use either da
 The :attribute does not match the format :format.
 ```
 
+## Example
+
+```js
+import { dateFormat } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  date: '29/09/2018'
+};
+
+/**
+ * Date format
+ */
+const format = 'DD/MM/YYYY';
+
+/**
+ * Validate if the date field has the specified format
+ * @response true
+ */
+dateFormat.check({ value: data.date }, format);
+```
+
 ## Progress
 
 - [x] Tests

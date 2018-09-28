@@ -8,14 +8,14 @@ describe('alphaNum rule', () => {
   });
 
   /** @test */
-  it('should return true when a string is composed by characters and spaces', () => {
-    expect(alphaNum.check({ value: 'abc EFG' })).toBeTruthy();
+  it('should return true when a string is composed by numeric characters', () => {
+    expect(alphaNum.check({ value: '123' })).toBeTruthy();
+    expect(alphaNum.check({ value: 'abc123' })).toBeTruthy();
   });
 
   /** @test */
-  it('should return true when a string is composed by numeric characters', () => {
-    expect(alphaNum.check({ value: '123' })).toBeTruthy();
-    expect(alphaNum.check({ value: 'abc 123' })).toBeTruthy();
+  it('should return false when a string is composed by characters and spaces', () => {
+    expect(alphaNum.check({ value: 'abc EFG' })).toBeFalsy();
   });
 
   /** @test */

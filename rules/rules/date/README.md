@@ -2,10 +2,6 @@
 
 The field under validation must be a valid date according to the Date.parse JS function.
 
-## Options
-
-- `date`: should be a valid JS Date string
-
 ## Implementation
 
 ```js
@@ -18,6 +14,23 @@ The field under validation must be a valid date according to the Date.parse JS f
 
 ```
 The :attribute is not a valid date.
+```
+
+```js
+import { date } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  publishedAt: '2018-10-01'
+};
+
+/**
+ * Validate if the publishedAt field is a valid date
+ * @response true
+ */
+date.check({ value: data.publishedAt });
 ```
 
 ## Progress

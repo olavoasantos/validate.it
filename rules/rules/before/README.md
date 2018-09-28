@@ -20,6 +20,30 @@ The field under validation must be a value preceding the given date. The dates w
 The :attribute must be a date before :date.
 ```
 
+## Example
+
+```js
+import { before } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  today: '2018-09-29'
+};
+
+/**
+ * Deadline
+ */
+const deadline = '2018-10-01';
+
+/**
+ * Validate if today field is before the deadline
+ * @response true
+ */
+before.check({ value: data.today }, deadline);
+```
+
 ## Progress
 
 - [x] Tests

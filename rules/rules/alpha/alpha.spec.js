@@ -7,8 +7,8 @@ describe('alpha rule', () => {
     expect(alpha.check({ value: 'ABC' })).toBeTruthy();
   });
   /** @test */
-  it('should return true when a string is only composed by alpha characters with spaces', () => {
-    expect(alpha.check({ value: 'abc EFG' })).toBeTruthy();
+  it('should return false when a string is composed by alpha characters with spaces', () => {
+    expect(alpha.check({ value: 'abc EFG' })).toBeFalsy();
   });
 
   /** @test */

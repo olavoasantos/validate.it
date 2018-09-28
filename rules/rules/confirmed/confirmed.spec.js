@@ -8,7 +8,7 @@ describe('confirmed rule', () => {
       password_confirmation: 'MY PASSWORD',
     };
 
-    expect(confirmed.check({ value: data.password, attribute: 'password', data })).toBeTruthy();
+    expect(confirmed.check({ attribute: 'password', data })).toBeTruthy();
   });
 
   /** @test */
@@ -18,7 +18,7 @@ describe('confirmed rule', () => {
       password_confirmation: 'MY WRONG PASSWORD',
     };
 
-    expect(confirmed.check({ value: data.password, attribute: 'password', data })).toBeFalsy();
+    expect(confirmed.check({ attribute: 'password', data })).toBeFalsy();
   });
 
   /** @test */
@@ -27,6 +27,6 @@ describe('confirmed rule', () => {
       password: 'MY PASSWORD',
     };
 
-    expect(confirmed.check({ value: data.password, attribute: 'password', data })).toBeFalsy();
+    expect(confirmed.check({ attribute: 'password', data })).toBeFalsy();
   });
 });

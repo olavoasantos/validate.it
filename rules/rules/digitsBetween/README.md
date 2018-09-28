@@ -25,6 +25,35 @@ The field under validation must have a length between the given min and max.
 The :attribute must be between :min and :max digits.
 ```
 
+## Example
+
+```js
+import { digitsBetween } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  price: 1000
+};
+
+/**
+ * Minimum number of digits
+ */
+const min = 3;
+
+/**
+ * Maximum number of digits
+ */
+const min = 5;
+
+/**
+ * Validate if the price field has 4 digits
+ * @response true
+ */
+digitsBetween.check({ value: data.price }, min, max);
+```
+
 ## Progress
 
 - [x] Tests

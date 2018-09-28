@@ -37,6 +37,54 @@ The :attribute must be between :min and :max characters.
 The :attribute must have between :min and :max items.
 ```
 
+## Example
+
+```js
+import { between } from '@validate.it/rules';
+
+/**
+ * Submitted form data
+ */
+const data = {
+  projects: 2,
+  password: 'MY_SECRET',
+  file: File, // size=1024
+  overduedTasks: [
+    'Create tests',
+    'Document functions',
+  ],
+};
+
+/**
+ * Numeric type
+ * Validate if the projects field is between 1 and 3.
+ * @response true
+ */
+between.check({ value: data.projects }, 'numeric', 1, 3);
+
+/**
+ * File type
+ * Validate if the file size in the file field
+ * is between 500 and 5000.
+ * @response true
+ */
+between.check({ value: data.file }, 'file', 500, 5000);
+
+/**
+ * String type
+ * Validate if the password length is between 8 and 13.
+ * @response true
+ */
+between.check({ value: data.password }, 'string', 8, 13);
+
+/**
+ * Array type
+ * Validate if the overduedTasks list length is between 0 and 3.
+ * @response true
+ */
+between.check({ value: data.overduedTasks }, 'array', 0, 3);
+```
+
 ## Progress
 
 - [x] Tests
