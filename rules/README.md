@@ -95,3 +95,14 @@ This functions will validate the value. It should return a `Boolean` (`true` if 
 - [size](/rules/rules/size/)
 - [string](/rules/rules/string/)
 - [url](/rules/rules/url/)
+
+## Version log
+
+- **v0.0.x**:
+
+  - Initial commits
+  - Created first rules
+
+## Author
+
+- [Olavo Amorim Santos](https://github.com/olavoasantos/)

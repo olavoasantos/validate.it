@@ -8,13 +8,6 @@ Still a work in progress. Soon the first version will be released. Also, this wa
 
 1. [Available rules](/rules/)
 
-## Version log
-
-- **v0.0.x**:
-
-  - Initial commits
-  - Created first rules
-
 ## Author
 
 - [Olavo Amorim Santos](https://github.com/olavoasantos/)
