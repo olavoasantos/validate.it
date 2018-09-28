@@ -87,7 +87,7 @@ describe('greaterThan rule', () => {
   /** @test */
   it('should return true if a array length is greater than a specified value', () => {
     const data = {
-      array: ['abc', 'ab', 'a'],
+      array: makeArray(3),
       min: 2
     };
     expect(greaterThan.check({ value: data.array, data }, 'min')).toBeTruthy();
@@ -96,7 +96,7 @@ describe('greaterThan rule', () => {
   /** @test */
   it('should return false if a array length is equal to a specified value', () => {
     const data = {
-      array: ['ab', 'a'],
+      array: makeArray(2),
       min: 2
     };
     expect(greaterThan.check({ value: data.array, data }, 'min')).toBeFalsy();
@@ -105,7 +105,7 @@ describe('greaterThan rule', () => {
   /** @test */
   it('should return false if a array length is smaller than a specified value', () => {
     const data = {
-      array: ['a'],
+      array: makeArray(1),
       min: 2
     };
     expect(greaterThan.check({ value: data.array, data }, 'min')).toBeFalsy();
