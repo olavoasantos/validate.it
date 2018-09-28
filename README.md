@@ -1,4 +1,4 @@
-# Validate it
+# @validate.it
 
 ## Disclaimer
 
