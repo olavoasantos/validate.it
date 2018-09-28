@@ -1,8 +1,18 @@
 # @validate.it/rules
 
-Validation rules are objects containing a `message` and a `check` functions.
+## Installation
+
+```bash
+// If you are using npm
+npm install --save @validate.it/rules
+
+// If you are using yarn
+yarn add @validate.it/rules
+```
 
 ## Rule structure
+
+Validation rules are JS objects containing a `message` and a `check` functions.
 
 ```ts
 {
