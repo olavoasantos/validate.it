@@ -1,11 +1,21 @@
 export default {
-  message: (attribute, { value, type }) =>
-    ({
-      numeric: `The ${attribute} must be greater than or equal ${value}.`,
-      file: `The ${attribute} must be greater than or equal ${value} kilobytes.`,
-      string: `The ${attribute} must be greater than or equal ${value} characters.`,
-      array: `The ${attribute} must have ${value} items or more.`
-    }[type]),
+  message: (attribute, { value, type }) => {
+    if (typeof value === 'string') {
+      return `The ${attribute} must be greater than or equal ${value} characters.`;
+    }
+    if (Array.isArray(value)) {
+      return `The ${attribute} must have ${value} items or more.`;
+    }
+    if (!isNaN(value)) {
+      return `The ${attribute} must be greater than or equal ${value}.`;
+    }
+    if (
+      typeof value === 'File' ||
+      (value.constructor && value.constructor.name === 'Blob')
+    ) {
+      return `The ${attribute} must be greater than or equal ${value} kilobytes.`;
+    }
+  },
   check: ({ value, data }, field) => {
     if (Array.isArray(value) || typeof value === 'string') {
       return value.length >= data[field];
