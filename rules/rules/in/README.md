@@ -1,14 +1,18 @@
 # in:foo,bar,...
 
-The field under validation must be included in the given list of values. Since this rule often requires you to implode an array, the Rule::in method may be used to fluently construct the rule.
+The field under validation must be included in the given list of values.
 
+## Options
+
+- `...args`: List of allowed values separated by commas (`foo,bar,baz,...`)
 
 ## Implementation
 
 ```js
 export default {
-  message: attribute => `The selected ${attribute} is invalid.`
-  // check: (value, { }) => {}
+({ value }, ...oneOf) => {
+  return oneOf.indexOf(value) > -1;
+}
 };
 
 ```
@@ -16,12 +20,29 @@ export default {
 ## Default message
 
 ```
+The selected :attribute is invalid.
+```
 
+## Example
+
+```js
+import { in as inRule } from '@validate.it/rules';
+
+/**
+ * List of values
+ */
+const oneOf = ['Value 1', 'Value 2'];
+
+/**
+ * Validate if the value is included in the oneOf array
+ * @response true
+ */
+inRule.check({ value: 'Value 1' }, ...oneOf);
 ```
 
 ## Progress
 
-- [ ] Tests
+- [x] Tests
 - [x] Response message
-- [ ] Validation logic
-- [ ] Documentation
+- [x] Validation logic
+- [x] Documentation

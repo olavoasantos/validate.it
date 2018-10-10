@@ -69,7 +69,6 @@ This functions will validate the value. It should return a `Boolean` (`true` if 
 - [email](/rules/rules/email/)
 - [greaterThan](/rules/rules/greaterThan/)
 - [greaterThanOrEqual](/rules/rules/greaterThanOrEqual/)
-- [image](/rules/rules/image/)
 - [in](/rules/rules/in/)
 - [inArray](/rules/rules/inArray/)
 - [integer](/rules/rules/integer/)

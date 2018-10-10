@@ -20,7 +20,6 @@ export { default as distinct } from './rules/distinct';
 export { default as email } from './rules/email';
 export { default as greaterThan } from './rules/greaterThan';
 export { default as greaterThanOrEqual } from './rules/greaterThanOrEqual';
-export { default as image } from './rules/image';
 export { default as in } from './rules/in';
 export { default as inArray } from './rules/inArray';
 export { default as integer } from './rules/integer';

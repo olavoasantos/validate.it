@@ -112,11 +112,6 @@ describe('@validate.it/rules', () => {
   });
 
   /** @test **/
-  it('imports image rule', () => {
-    expect(rules.image).toBeTruthy();
-  });
-
-  /** @test **/
   it('imports in rule', () => {
     expect(rules.in).toBeTruthy();
   });
