@@ -9,12 +9,9 @@ The field under validation must be included in the given list of values.
 ## Implementation
 
 ```js
-export default {
 ({ value }, ...oneOf) => {
   return oneOf.indexOf(value) > -1;
 }
-};
-
 ```
 
 ## Default message
