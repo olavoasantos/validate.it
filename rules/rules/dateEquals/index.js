@@ -1,7 +1,7 @@
 export default {
-  message: (attribute, { date }) =>
+  message: ({ attribute, args: [date] }) =>
     `The ${attribute} does not match ${date}.`,
-  check: ({ value }, date) => {
+  check: ({ value, args: [date] }) => {
     return new Date(value).getTime() === new Date(date).getTime();
-  }
+  },
 };

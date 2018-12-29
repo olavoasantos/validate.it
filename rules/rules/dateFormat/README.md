@@ -15,7 +15,7 @@ The field under validation must match the given format. You should use either da
 ## Implementation
 
 ```js
-({ value }, format) => {
+({ value, args: [format] }) => {
   const pattern = format
     .replace('mm', '([0-5][0-9])')
     .replace('MM', '(0[1-9]|1[0-2])')
@@ -29,7 +29,7 @@ The field under validation must match the given format. You should use either da
 
 ## Default message
 
-```
+```text
 The :attribute does not match the format :format.
 ```
 
@@ -42,7 +42,7 @@ import { dateFormat } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  date: '29/09/2018'
+  date: '29/09/2018',
 };
 
 /**
@@ -54,7 +54,7 @@ const format = 'DD/MM/YYYY';
  * Validate if the date field has the specified format
  * @response true
  */
-dateFormat.check({ value: data.date }, format);
+dateFormat.check({ value: data.date, args: [format] });
 ```
 
 ## Progress

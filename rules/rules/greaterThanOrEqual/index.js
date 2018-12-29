@@ -1,5 +1,5 @@
 export default {
-  message: (attribute, { value, type }) => {
+  message: ({ attribute, value, args: [field] }) => {
     if (typeof value === 'string') {
       return `The ${attribute} must be greater than or equal ${value} characters.`;
     }
@@ -16,7 +16,7 @@ export default {
       return `The ${attribute} must be greater than or equal ${value} kilobytes.`;
     }
   },
-  check: ({ value, data }, field) => {
+  check: ({ value, data, args: [field] }) => {
     if (Array.isArray(value) || typeof value === 'string') {
       return value.length >= data[field];
     }
@@ -29,5 +29,5 @@ export default {
     ) {
       return value.size >= data[field];
     }
-  }
+  },
 };

@@ -18,7 +18,7 @@ The field under validation must be able to be cast as a boolean. Accepted input 
 
 ## Default message
 
-```
+```text
 The :attribute field must be true or false.
 ```
 

@@ -9,14 +9,14 @@ The field under validation must exist in anotherfield's values.
 ## Implementation
 
 ```js
-({ value, data }, key) => {
+({ value, data, args: [key] }) => {
   return Array.isArray(data[key]) && data[key].indexOf(value) > -1;
-}
+};
 ```
 
 ## Default message
 
-```
+```text
 The :attribute field does not exist in :anotherfield.
 ```
 
@@ -30,14 +30,14 @@ import { inArray } from '@validate.it/rules';
  */
 const data = {
   color: '#ff0000',
-  colors: ['#ff0000', '#00ff00', '#0000ff']
+  colors: ['#ff0000', '#00ff00', '#0000ff'],
 };
 
 /**
  * Validate if the value of color exists in the colors array
  * @response true
  */
-inArray.check({ value: data.color }, 'colors');
+inArray.check({ value: data.color, args: ['colors'] });
 ```
 
 ## Progress

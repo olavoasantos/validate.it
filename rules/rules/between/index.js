@@ -1,17 +1,20 @@
 export default {
-  message: (attribute, { min, max, type }) =>
-    ({
-      numeric: `The ${attribute} must be between ${min} and ${max}.`,
-      file: `The ${attribute} must be between ${min} and ${max} kilobytes.`,
-      string: `The ${attribute} must be between ${min} and ${max} characters.`,
-      array: `The ${attribute} must have between ${min} and ${max} items.`
-    }[type]),
-  check: ({ value }, type, min, max) => {
-    return {
-      numeric: () => value > min && value < max,
-      file: () => value.size > min && value.size < max,
-      string: () => value.length > min && value.length < max,
-      array: () => value.length > min && value.length < max
-    }[type]();
-  }
+  message: (attribute, { min, max, type }) => {
+    if (typeof value === 'number')
+      return `The ${attribute} must be between ${min} and ${max}.`;
+    if (Array.isArray(value))
+      return `The ${attribute} must have between ${min} and ${max} items.`;
+    if (typeof value === 'string')
+      return `The ${attribute} must be between ${min} and ${max} characters.`;
+    if (value instanceof File || value instanceof Blob)
+      return `The ${attribute} must be between ${min} and ${max} kilobytes.`;
+  },
+  check: ({ value, args: [min, max] }) => {
+    if (typeof value === 'number') return value > min && value < max;
+    if (Array.isArray(value)) return value.length > min && value.length < max;
+    if (typeof value === 'string')
+      return value.length > min && value.length < max;
+    if (value instanceof File || value instanceof Blob)
+      return value.size > min && value.size < max;
+  },
 };

@@ -1,22 +1,22 @@
 export default {
-  message: (attribute, { value }) => {
+  message: ({ attribute, args: [field] }) => {
     if (typeof value === 'string') {
-      return `The ${attribute} must be greater than ${value} characters.`;
+      return `The ${attribute} must be greater than ${field} characters.`;
     }
     if (Array.isArray(value)) {
-      return `The ${attribute} must have more than ${value} items.`;
+      return `The ${attribute} must have more than ${field} items.`;
     }
     if (!isNaN(value)) {
-      return `The ${attribute} must be greater than ${value}.`;
+      return `The ${attribute} must be greater than ${field}.`;
     }
     if (
       typeof value === 'File' ||
       (value.constructor && value.constructor.name === 'Blob')
     ) {
-      return `The ${attribute} must be greater than ${value} kilobytes.`;
+      return `The ${attribute} must be greater than ${field} kilobytes.`;
     }
   },
-  check: ({ value, data }, field) => {
+  check: ({ value, data, args: [field] }) => {
     if (Array.isArray(value) || typeof value === 'string') {
       return value.length > data[field];
     }
@@ -29,5 +29,5 @@ export default {
     ) {
       return value.size > data[field];
     }
-  }
+  },
 };

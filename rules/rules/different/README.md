@@ -9,14 +9,14 @@ The field under validation must have a different value than another specified fi
 ## Implementation
 
 ```js
-({ value, data }, other) => {
+({ value, data, args: [other] }) => {
   return JSON.stringify(value) !== JSON.stringify(data[other]);
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute and :other must be different.
 ```
 
@@ -30,14 +30,14 @@ import { different } from '@validate.it/rules';
  */
 const data = {
   user: 'John Doe',
-  target: 'Jane Doe'
+  target: 'Jane Doe',
 };
 
 /**
  * Validate if the user field is different from target field
  * @response true
  */
-different.check({ value: data.user }, 'target');
+different.check({ value: data.user, args: ['target'] });
 ```
 
 ## Progress

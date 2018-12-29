@@ -1,5 +1,5 @@
 export default {
-  message: attribute => `The ${attribute} field must be true or false.`,
+  message: ({ attribute }) => `The ${attribute} field must be true or false.`,
   check: ({ value }) => {
     return (
       value === 0 ||
@@ -8,5 +8,5 @@ export default {
       value === '1' ||
       typeof value === 'boolean'
     );
-  }
+  },
 };

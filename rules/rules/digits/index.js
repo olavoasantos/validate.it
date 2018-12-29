@@ -1,7 +1,7 @@
 export default {
-  message: (attribute, { digits }) =>
+  message: ({ attribute, args: [digits] }) =>
     `The ${attribute} must be ${digits} digits.`,
-  check: ({ value }, digits) => {
+  check: ({ value, args: [digits] }) => {
     return !isNaN(value) && value.toString().length === digits;
-  }
+  },
 };

@@ -5,16 +5,16 @@ describe('digits rule', () => {
 
   /** @test */
   it('should return true is a number has the correct number of digits', () => {
-    expect(digits.check({ value: 123 }, value)).toBeTruthy();
+    expect(digits.check({ value: 123, args: [value] })).toBeTruthy();
   });
 
   /** @test */
   it('should return false is a number does not have the correct number of digits', () => {
-    expect(digits.check({ value: 1234 }, value)).toBeFalsy();
+    expect(digits.check({ value: 1234, args: [value] })).toBeFalsy();
   });
 
   /** @test */
   it('should return false is not a number', () => {
-    expect(digits.check({ value: 'NOT A NUMBER' }, value)).toBeFalsy();
+    expect(digits.check({ value: 'NOT A NUMBER', args: [value] })).toBeFalsy();
   });
 });

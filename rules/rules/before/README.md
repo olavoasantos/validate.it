@@ -9,14 +9,14 @@ The field under validation must be a value preceding the given date. The dates w
 ## Implementation
 
 ```js
-({ value }, date) => {
+({ value, [date] }) => {
   return new Date(value) < new Date(date);
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute must be a date before :date.
 ```
 
@@ -29,7 +29,7 @@ import { before } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  today: '2018-09-29'
+  today: '2018-09-29',
 };
 
 /**

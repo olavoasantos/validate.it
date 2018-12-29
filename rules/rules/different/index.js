@@ -1,7 +1,7 @@
 export default {
-  message: (attribute, { other }) =>
+  message: ({ attribute, args: [other] }) =>
     `The ${attribute} and ${other} must be different.`,
-  check: ({ value, data }, other) => {
+  check: ({ value, data, args: [other] }) => {
     return JSON.stringify(value) !== JSON.stringify(data[other]);
-  }
+  },
 };

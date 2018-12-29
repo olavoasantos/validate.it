@@ -1,4 +1,4 @@
-# distinct:key?
+# distinct:?key
 
 When working with arrays, the field under validation must not have any duplicate values.
 
@@ -9,22 +9,21 @@ When working with arrays, the field under validation must not have any duplicate
 ## Implementation
 
 ```js
-({ value }, key) => {
+({ value, args }) => {
+  const [key] = args ? args : [];
   return value.reduce((isDistinct, item) => {
     if (!isDistinct) return isDistinct;
 
-    if (!!key) {
-      return value.filter(data => data[key] === item[key]).length < 2;
-    }
-
-    return value.filter(data => data === item).length < 2;
+    return !key
+      ? value.filter(data => data === item).length < 2
+      : value.filter(data => data[key] === item[key]).length < 2;
   }, true);
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute field has a duplicate value.
 ```
 
@@ -37,16 +36,12 @@ import { distinct } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  list: [
-    'apples',
-    'lemons',
-    'oranges',
-  ],
+  list: ['apples', 'lemons', 'oranges'],
   users: [
     { id: 1, name: 'John Doe' },
     { id: 2, name: 'Jane Doe' },
-    { id: 3, name: 'John Doe' }
-  ]
+    { id: 3, name: 'John Doe' },
+  ],
 };
 
 /**
@@ -59,7 +54,7 @@ const uniqueField = 'id';
  * with unique IDs
  * @response true
  */
-distinct.check({ value: data.users }, uniqueField);
+distinct.check({ value: data.users, args: [uniqueField] });
 
 /**
  * Validate if the list field contains only unique items

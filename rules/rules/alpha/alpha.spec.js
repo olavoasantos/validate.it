@@ -6,6 +6,28 @@ describe('alpha rule', () => {
     expect(alpha.check({ value: 'abc' })).toBeTruthy();
     expect(alpha.check({ value: 'ABC' })).toBeTruthy();
   });
+
+  /** @test */
+  it('should return true when a string is composed by alpha and spaces characters and receives the argument space', () => {
+    expect(alpha.check({ value: 'abc EFG', args: ['space'] })).toBeTruthy();
+  });
+
+  /** @test */
+  it('should return true when a string is composed by alpha and dash characters and receives the argument dash', () => {
+    expect(alpha.check({ value: 'abc-EFG', args: ['dash'] })).toBeTruthy();
+  });
+
+  /** @test */
+  it('should return true when a string is composed by alpha and underscore characters and receives the argument dash', () => {
+    expect(alpha.check({ value: 'abc_EFG', args: ['dash'] })).toBeTruthy();
+  });
+
+  /** @test */
+  it('should return true when a string is composed by numeric characters and receives the num argumrnt', () => {
+    expect(alpha.check({ value: '123', args: ['num'] })).toBeTruthy();
+    expect(alpha.check({ value: 'abc123', args: ['num'] })).toBeTruthy();
+  });
+
   /** @test */
   it('should return false when a string is composed by alpha characters with spaces', () => {
     expect(alpha.check({ value: 'abc EFG' })).toBeFalsy();

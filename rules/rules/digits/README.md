@@ -9,14 +9,14 @@ The field under validation must be numeric and must have an exact length of valu
 ## Implementation
 
 ```js
-({ value }, digits) => {
+({ value, args: [digits] }) => {
   return !isNaN(value) && value.toString().length === digits;
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute must be :digits digits.
 ```
 
@@ -29,7 +29,7 @@ import { digits } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  price: 1000
+  price: 1000,
 };
 
 /**
@@ -41,7 +41,7 @@ const numberOfDigits = 4;
  * Validate if the price field has 4 digits
  * @response true
  */
-digits.check({ value: data.price }, numberOfDigits);
+digits.check({ value: data.price, args: [numberOfDigits] });
 ```
 
 ## Progress

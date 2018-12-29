@@ -5,11 +5,13 @@ describe('in rule', () => {
 
   /** @test */
   it.only('should return true if a value is included in list', () => {
-    expect(inRule.check({ value: 'VALUE 1' }, ...oneOf)).toBeTruthy();
+    expect(inRule.check({ value: 'VALUE 1', args: [...oneOf] })).toBeTruthy();
   });
 
   /** @test */
   it.only('should return false if a value is not included in list', () => {
-    expect(inRule.check({ value: 'NOT INCLUDED' }, ...oneOf)).toBeFalsy();
+    expect(
+      inRule.check({ value: 'NOT INCLUDED', args: [...oneOf] }),
+    ).toBeFalsy();
   });
 });

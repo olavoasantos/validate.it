@@ -12,7 +12,7 @@ The field under validation must be a valid date according to the Date.parse JS f
 
 ## Default message
 
-```
+```text
 The :attribute is not a valid date.
 ```
 
@@ -23,7 +23,7 @@ import { date } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  publishedAt: '2018-10-01'
+  publishedAt: '2018-10-01',
 };
 
 /**

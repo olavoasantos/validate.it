@@ -1,7 +1,7 @@
 {
   "name": "@validate.it/rules",
   "version": "0.0.0",
-  "main": "dis/index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "author": {
     "name": "Olavo Amorim Santos",

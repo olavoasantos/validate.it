@@ -10,7 +10,7 @@ The field under validation must have a length between the given min and max.
 ## Implementation
 
 ```js
-({ value }, min, max) => {
+({ value, args: [min, max] }) => {
   return (
     !isNaN(value) &&
     value.toString().length > min &&
@@ -21,7 +21,7 @@ The field under validation must have a length between the given min and max.
 
 ## Default message
 
-```
+```text
 The :attribute must be between :min and :max digits.
 ```
 
@@ -34,7 +34,7 @@ import { digitsBetween } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  price: 1000
+  price: 1000,
 };
 
 /**
@@ -51,7 +51,7 @@ const min = 5;
  * Validate if the price field has 4 digits
  * @response true
  */
-digitsBetween.check({ value: data.price }, min, max);
+digitsBetween.check({ value: data.price, args: [min, max] });
 ```
 
 ## Progress

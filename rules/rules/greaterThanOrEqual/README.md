@@ -5,7 +5,7 @@ The field under validation must be greater than or equal to the given field. The
 ## Implementation
 
 ```js
-({ value, data }, field) => {
+({ value, data, args: [field] }) => {
   if (Array.isArray(value) || typeof value === 'string') {
     return value.length >= data[field];
   }
@@ -23,7 +23,7 @@ The field under validation must be greater than or equal to the given field. The
 
 ## Default message
 
-```
+```text
 // If type is numeric:
 The :attribute must be greater than or equal :min.
 
@@ -64,28 +64,28 @@ const data = {
  * Validate if the projects field is greater than 1
  * @response true
  */
-greaterThanOrEqual.check({ value: data.projects, data }, 'minProjects');
+greaterThanOrEqual.check({ value: data.projects, data, args: ['minProjects'] });
 
 /**
  * File type
  * Validate if the file size in the file field is greater than 500
  * @response true
  */
-greaterThanOrEqual.check({ value: data.file, data }, 'minFileSize');
+greaterThanOrEqual.check({ value: data.file, data, args: ['minFileSize'] });
 
 /**
  * String type
  * Validate if the password length is greater than 8
  * @response true
  */
-greaterThanOrEqual.check({ value: data.password, data }, 'minPasswordLength');
+greaterThanOrEqual.check({ value: data.password, data, args: ['minPasswordLength'] });
 
 /**
  * Array type
  * Validate if the overduedTasks list length is greater than 1
  * @response true
  */
-greaterThanOrEqual.check({ value: data.tasks, data }, 'minTasks');
+greaterThanOrEqual.check({ value: data.tasks, data, args: ['minTasks'] });
 ```
 
 ## Progress

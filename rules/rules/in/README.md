@@ -1,4 +1,4 @@
-# in:foo,bar,...
+# in:foo,bar,(...)
 
 The field under validation must be included in the given list of values.
 
@@ -9,14 +9,14 @@ The field under validation must be included in the given list of values.
 ## Implementation
 
 ```js
-({ value }, ...oneOf) => {
+({ value, args: [...oneOf] }) => {
   return oneOf.indexOf(value) > -1;
-}
+};
 ```
 
 ## Default message
 
-```
+```text
 The selected :attribute is invalid.
 ```
 
@@ -34,7 +34,7 @@ const oneOf = ['Value 1', 'Value 2'];
  * Validate if the value is included in the oneOf array
  * @response true
  */
-inRule.check({ value: 'Value 1' }, ...oneOf);
+inRule.check({ value: 'Value 1', args: [...oneOf] });
 ```
 
 ## Progress

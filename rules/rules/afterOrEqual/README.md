@@ -9,14 +9,14 @@ The field under validation must be a value after or equal to the given date. For
 ## Implementation
 
 ```js
-({ value }, date) => {
+({ value, args: [date] }) => {
   return new Date(value) >= new Date(date);
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute must be a date after or equal to :date.
 ```
 
@@ -28,7 +28,7 @@ import { afterOrEqual } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  date: '2018-09-29'
+  date: '2018-09-29',
 };
 
 /**
@@ -40,7 +40,7 @@ const releaseDate = '2018-09-29';
  * Validate if date field is after or equal the releaseDate
  * @response true
  */
-afterOrEqual.check({ value: data.date }, releaseDate);
+afterOrEqual.check({ value: data.date, args: [releaseDate] });
 ```
 
 ## Progress

@@ -9,11 +9,15 @@ describe('different rule', () => {
 
   /** @test */
   it('should return true if the values are different', () => {
-    expect(different.check({ value: data.field, data }, 'other_field')).toBeTruthy();
+    expect(
+      different.check({ value: data.field, data, args: ['other_field'] }),
+    ).toBeTruthy();
   });
 
   /** @test */
   it('should return false if the values are equal', () => {
-    expect(different.check({ value: data.field, data }, 'another_field')).toBeFalsy();
+    expect(
+      different.check({ value: data.field, data, args: ['another_field'] }),
+    ).toBeFalsy();
   });
 });

@@ -12,7 +12,7 @@ The field under validation must be a JS array.
 
 ## Default message
 
-```
+```text
 The :attribute must be an array.
 ```
 
@@ -25,7 +25,7 @@ import { array } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  list: [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }]
+  list: [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }],
 };
 
 /**

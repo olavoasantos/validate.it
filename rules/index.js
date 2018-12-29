@@ -2,8 +2,6 @@ export { default as accepted } from './rules/accepted';
 export { default as after } from './rules/after';
 export { default as afterOrEqual } from './rules/afterOrEqual';
 export { default as alpha } from './rules/alpha';
-export { default as alphaDash } from './rules/alphaDash';
-export { default as alphaNum } from './rules/alphaNum';
 export { default as array } from './rules/array';
 export { default as before } from './rules/before';
 export { default as beforeOrEqual } from './rules/beforeOrEqual';

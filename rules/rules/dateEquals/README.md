@@ -9,14 +9,14 @@ The field under validation must be equal to the given date. The dates will be pa
 ## Implementation
 
 ```js
-({ value }, date) => {
+({ value, args: [date] }) => {
   return new Date(value).getTime() === new Date(date).getTime();
 };
 ```
 
 ## Default message
 
-```
+```text
 The :attribute does not match :date.
 ```
 
@@ -32,7 +32,6 @@ const data = {
   today: '2018-12-25',
 };
 
-
 /**
  * Christmas day
  */
@@ -42,7 +41,7 @@ const christmas = '2018-12-25';
  * Validate if today field is cristmas date
  * @response true
  */
-dateEquals.check({ value: data.today }, christmas);
+dateEquals.check({ value: data.today, args: [christmas] });
 ```
 
 ## Progress

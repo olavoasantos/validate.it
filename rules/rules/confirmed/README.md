@@ -12,7 +12,7 @@ The field under validation must have a matching field of `foo_confirmation`. For
 
 ## Default message
 
-```
+```text
 The :attribute confirmation does not match.
 ```
 
@@ -26,7 +26,7 @@ import { confirmed } from '@validate.it/rules';
  */
 const data = {
   password: 'MY_SECRET',
-  password_confirmation: 'MY_SECRET'
+  password_confirmation: 'MY_SECRET',
 };
 
 /**

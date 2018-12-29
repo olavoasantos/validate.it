@@ -1,1 +1,1 @@
-export default (length) => Array.from({length}, (v, i) => i);
+export default length => Array.from({ length }, (v, i) => i);

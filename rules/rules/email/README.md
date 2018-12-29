@@ -14,7 +14,7 @@ The field under validation must be formatted as an e-mail address.
 
 ## Default message
 
-```
+```text
 The :attribute must be a valid email address.
 ```
 
@@ -27,7 +27,7 @@ import { email } from '@validate.it/rules';
  * Submitted form data
  */
 const data = {
-  email: 'john@example.com'
+  email: 'john@example.com',
 };
 
 /**
