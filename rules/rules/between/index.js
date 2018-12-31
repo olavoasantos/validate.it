@@ -1,5 +1,5 @@
 export default {
-  message: (attribute, { min, max, type }) => {
+  message: (attribute, { min, max }) => {
     if (typeof value === 'number')
       return `The ${attribute} must be between ${min} and ${max}.`;
     if (Array.isArray(value))

@@ -21,29 +21,17 @@ Validation rules are JS objects containing a `message` and a `check` functions.
 
 ```ts
 {
-  message: Function (attribute: string, options: Object),
-  check: Function (options: Object, ...args: any)
+  message: Function (options: Object),
+  check: Function (options: Object)
 }
 ```
 
-### `message`
+Each of these methods accepts an options object containing:
 
-The message function defines the error message. It should return a `String` and it receives the following parameters:
-
+- `value <Any>`: value of the field being validated
 - `attribute <String>`: The name of the validated field
-- `options <Object>`: A object containing the rules options
-
-### `check`
-
-This functions will validate the value. It should return a `Boolean` (`true` if passes, `false` if fails) and receives the following parameters:
-
-- `options <Object>`: Object containing the valaidation data:
-
-  - `attribute <String>`: name of the field being validated
-  - `value <Any>`: value of the field being validated
-  - `data <Object>`: object containing all the fields being validated
-
-- `...args <Any>`: the rest of the arguments are the validation rules options passed in order
+- `data <Object>`: object containing all the fields being validated
+- `args <Array>`: An array containing the options passed to the validation rules in order
 
 ## Available rules
 
@@ -67,7 +55,6 @@ This functions will validate the value. It should return a `Boolean` (`true` if 
 - [email](/rules/rules/email/)
 - [greaterThan](/rules/rules/greaterThan/)
 - [greaterThanOrEqual](/rules/rules/greaterThanOrEqual/)
-- [in](/rules/rules/in/)
 - [inArray](/rules/rules/inArray/)
 - [integer](/rules/rules/integer/)
 - [ip](/rules/rules/ip/)
@@ -84,6 +71,7 @@ This functions will validate the value. It should return a `Boolean` (`true` if 
 - [notRegex](/rules/rules/notRegex/)
 - [nullable](/rules/rules/nullable/)
 - [numeric](/rules/rules/numeric/)
+- [oneOf](/rules/rules/oneOf/)
 - [present](/rules/rules/present/)
 - [regex](/rules/rules/regex/)
 - [required](/rules/rules/required/)

@@ -1,4 +1,4 @@
-# in:foo,bar,(...)
+# oneOf:foo,bar,(...)
 
 The field under validation must be included in the given list of values.
 
@@ -23,18 +23,18 @@ The selected :attribute is invalid.
 ## Example
 
 ```js
-import { in as inRule } from '@validate.it/rules';
+import { oneOf } from '@validate.it/rules';
 
 /**
  * List of values
  */
-const oneOf = ['Value 1', 'Value 2'];
+const list = ['Value 1', 'Value 2'];
 
 /**
  * Validate if the value is included in the oneOf array
  * @response true
  */
-inRule.check({ value: 'Value 1', args: [...oneOf] });
+oneOf.check({ value: 'Value 1', args: [...list] });
 ```
 
 ## Progress

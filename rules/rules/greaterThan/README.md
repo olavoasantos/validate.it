@@ -1,28 +1,26 @@
-# greaterThan:field
+# greaterThan:min
 
-The field under validation must be greater than the given field. The two fields must be of the same type. Strings, numerics, arrays, and files are evaluated using the same conventions as the size rule.
+The field under validation must be greater than the given number. Strings, numerics, arrays, and files are evaluated using the same conventions as the size rule.
 
 ## Options
 
-- `field`: Name of the field of comparison
+- `min`: Integer determining the minimum allowed number
 
 ## Implementation
 
 ```js
-({ value, data, args: [field] }) => {
+({ value, args: [min] }) => {
   if (Array.isArray(value) || typeof value === 'string') {
-    return value.length > data[field];
+    return value.length > min;
   }
-
   if (!isNaN(value)) {
-    return value > data[field];
+    return value > min;
   }
-
   if (
     typeof value === 'File' ||
     (value.constructor && value.constructor.name === 'Blob')
   ) {
-    return value.size > data[field];
+    return value.size > min;
   }
 };
 ```
@@ -53,45 +51,46 @@ import { greaterThan } from '@validate.it/rules';
  */
 const data = {
   projects: 2,
-  minProjects: 1,
-
   password: 'MY_SECRET',
-  minPasswordLength: 8,
-
   file: File, // size=1024
-  minFileSize: 500,
-
-  tasks: ['Create tests', 'Document functions']
-  minTasks: 1,
+  tasks: ['Create tests', 'Document functions'],
 };
+
+/**
+ * Minimum values
+ */
+const minProjects = 1;
+const minPasswordLength = 8;
+const minFileSize = 500;
+const minTasks = 1;
 
 /**
  * Numeric type
  * Validate if the projects field is greater than 1
  * @response true
  */
-greaterThan.check({ value: data.projects, data, args: ['minProjects'] });
+greaterThan.check({ value: data.projects, args: [minProjects] });
 
 /**
  * File type
  * Validate if the file size in the file field is greater than 500
  * @response true
  */
-greaterThan.check({ value: data.file, data, args: ['minFileSize'] });
+greaterThan.check({ value: data.file, args: [minFileSize] });
 
 /**
  * String type
  * Validate if the password length is greater than 8
  * @response true
  */
-greaterThan.check({ value: data.password, data, args: ['minPasswordLength'] });
+greaterThan.check({ value: data.password, args: [minPasswordLength] });
 
 /**
  * Array type
  * Validate if the overduedTasks list length is greater than 1
  * @response true
  */
-greaterThan.check({ value: data.tasks, data, args: ['minTasks'] });
+greaterThan.check({ value: data.tasks, args: [minTasks] });
 ```
 
 ## Progress
