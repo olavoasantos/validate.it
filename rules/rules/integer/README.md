@@ -2,26 +2,40 @@
 
 The field under validation must be an integer.
 
-
 ## Implementation
 
 ```js
-export default {
-  message: attribute => `The ${attribute} must be an integer.`
-  // check: (value, { }) => {}
-};
-
+({ value }) => Number.isInteger(value);
 ```
 
 ## Default message
 
+```text
+The :attribute must be an integer.
 ```
 
+## Example
+
+```js
+import { integer } from '@validate.it/rules';
+
+/**
+ * Submitted data
+ */
+const data = {
+  yars: 18,
+};
+
+/**
+ * Validate if the value of years is an integer
+ * @response true
+ */
+inArray.check({ value: data.years });
 ```
 
 ## Progress
 
-- [ ] Tests
+- [x] Tests
 - [x] Response message
-- [ ] Validation logic
-- [ ] Documentation
+- [x] Validation logic
+- [x] Documentation
